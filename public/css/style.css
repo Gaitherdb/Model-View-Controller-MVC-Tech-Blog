@@ -1,0 +1,51 @@
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 60%;
+
+}
+
+nav a {
+    font-size: 25px;
+    color: rgb(245, 245, 215);
+}
+
+header {
+    background-color: rgb(78, 75, 75);
+    padding: 30px;
+}
+
+.current-page {
+    padding: 1px;
+    background-color:rgb(245, 245, 215);
+    margin-right: 75%;
+    margin-left: 6%;
+    margin-top: 2%;
+    border-radius: 25px;
+}
+
+h1 {
+    color: rgb(78, 75, 75);
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(245, 245, 215);
+}
