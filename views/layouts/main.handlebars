@@ -14,7 +14,11 @@
       
       <nav>
         <a href="/">Home</a>
+        {{#if !logged_in}}
+        <a href="/login">Dashboard</a>
+        {{else}}
         <a href="/dashboard">Dashboard</a>
+        {{/if}}
         {{#if logged_in}}
         <button class="" id="logout">logout</button>
         {{else}}
