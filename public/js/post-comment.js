@@ -19,7 +19,7 @@ const commentHandler = async (event) => {
       if (response.ok) {
         console.log("hellooo")
         // If successful, refresh the page
-        // document.location.replace('/');
+        document.location.reload();
       } else {
         alert(response.statusText);
       }
