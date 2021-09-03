@@ -39,10 +39,10 @@ router.get('/posts/:id', async (req, res) => {
       ],
     });
 
-    const posts = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
     res.render('post', {
-      ...posts,
+      ...post,
       logged_in: req.session.logged_in,
       page: "The Tech Blog"
     });
