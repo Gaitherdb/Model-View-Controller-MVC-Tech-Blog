@@ -1,14 +1,38 @@
-
 <div class="">
-  <div class="">
-    <h2>{{title}}</h2>
-   
-    <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  </div>
-  <div class="">
-    <p>
-      {{content}}
-    </p>
-  </div>
-</div>
+    <div class="">
+        <h2>{{title}}</h2>
 
+        <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    </div>
+    <div class="">
+        <p>
+            {{content}}
+        </p>
+    </div>
+    {{#if logged_in}}
+    <div>
+        <form class="comment-form">
+            <label for="post-comment">Add a comment</label>
+            <br>
+            <input class="form-input" type="text" id="post-comment" />
+        </form>
+    </div>
+    {{else}}
+    <div>
+        <p>Log in to comment</p>
+    </div>
+    {{/if}}
+    {{!-- {{#if comments}} --}}
+    {{#each comments as |comment| }}
+    <div class="">
+        <div class="">
+            <h2>{{comment.content}}</h2>
+            <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{!-- {{/if}} --}}
+</div>
+{{#if logged_in}}
+<script src="./js/post-comment.js"></script>
+{{/if}}
