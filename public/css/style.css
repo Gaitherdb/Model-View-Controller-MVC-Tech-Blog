@@ -52,4 +52,35 @@ h1 {
 
 body {
   background-color: rgb(245, 245, 215);
+  margin:0;
+}
+
+.card {
+  border: 5px solid rgb(78, 75, 75);
+  margin: 10px 15px;
+}
+
+.card-header{
+  padding: 10px;
+  background-color: rgb(78, 75, 75);
+  color: rgb(245, 245, 215);
+  margin-top: 0;
+}
+
+.form {
+  font-size: 30px;
+  display:flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.text-box {
+  padding:10px;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: rgb(78, 75, 75);
+  color: rgb(245, 245, 215);
+  margin-bottom: 15px;
 }

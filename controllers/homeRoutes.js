@@ -49,10 +49,6 @@ router.get('/posts/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        // {
-        //   model: Post,
-        //   attributes: ['id'],
-        // },
       ],
     });
 
@@ -64,7 +60,6 @@ router.get('/posts/:id', async (req, res) => {
     res.render('post', {
       comments,
       ...post,
-      
       logged_in: req.session.logged_in,
       page: "The Tech Blog"
     });
