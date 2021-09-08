@@ -6,9 +6,8 @@ const editForm = document.querySelectorAll('.editPostForm');
 const personalPosts = document.querySelectorAll('.personalPosts');
 const postsBtn = document.querySelectorAll('.posts');
 const allPosts = document.querySelector('.allPosts');
+const deleteBtn = document.querySelectorAll('#delete-post')
 
-
-console.log(editPost)
 
 newPostBtn.addEventListener("click", function (event) {
    if (newPostForm.style.display === "none") {
@@ -22,42 +21,45 @@ newPostBtn.addEventListener("click", function (event) {
 allPosts.addEventListener("click", function (event) {
  
   var element = event.target;
-  if (element.matches('button')) {
+  if (element.matches('.posts')) {
   var post_id = element.parentElement.id;
-  console.log(post_id)
-
-
-  // const personalPosts = document.getElementById(`id${post_id}`);
-  
-  console.log(personalPosts)
  
-  console.log(postsBtn)
-  console.log('editform')
-  console.log(editForm)
     console.log(typeof editForm[1].dataset.id)
     for (let i=0; i < editForm.length; i++) {
-      console.log('test 1')
+     
       if (Number(editForm[i].dataset.id) == `${post_id}`){
-        console.log('test 2')
+        
       // var optionIndex = Number(element.getAttribute("dataset"));
       if (editForm[i].style.display === "none") {
         
-        console.log('test 3')
+        
         editForm[i].style.display = "block";
         // editPost.style.display = "none";
         for (let i=0; i < personalPosts.length; i++) {
-        console.log('test 4')
-        console.log(personalPosts[i].dataset.id)
+        
         if (personalPosts[i].dataset.id == `${post_id}`){
           personalPosts[i].style.display = "none";
-          console.log('test 5')
+          
         }
         }
     }}
     }}
 })
+const deletePost = async (event) => {
+  var element = event.target;
+  var post_id = element.dataset.id;
+  if (element.matches('#delete-post')){
+  const response = await fetch(`/api/posts/${post_id}`, {
+      method: 'DELETE',
+  });
 
-
+  if (response.ok) {
+      document.location.replace('/dashboard');
+  } else {
+      alert(response.statusText);
+  }
+}
+}
 
 const postHandler = async (event) => {
     event.preventDefault();
@@ -90,4 +92,7 @@ const postHandler = async (event) => {
   document
     .querySelector('#newPostForm')
     .addEventListener('submit', postHandler);
+    document
+    .querySelector('.allPosts')
+    .addEventListener('click', deletePost);
 })
