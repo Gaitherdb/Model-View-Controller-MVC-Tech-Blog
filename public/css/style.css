@@ -21,7 +21,7 @@ nav {
 }
 
 h2 a {
-  color: rgb(78, 75, 75);
+  color: rgb(245, 245, 215);
   font-size: 25px;
 }
 
@@ -83,4 +83,14 @@ body {
   background-color: rgb(78, 75, 75);
   color: rgb(245, 245, 215);
   margin-bottom: 15px;
+}
+
+.card p {
+  margin-left: 10px;
+}
+
+#logout {
+  font-size: 25px;
+  color: rgb(245, 245, 215);
+  background-color: rgb(78, 75, 75);
 }
