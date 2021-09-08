@@ -1,3 +1,5 @@
+const commentBtn = document.querySelector('#commentBtn');
+
 const commentHandler = async (event) => {
     event.preventDefault();
   

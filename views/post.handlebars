@@ -1,31 +1,33 @@
-<div class="">
-    <div class="">
+<div class="card">
+    <div class="card-header single-post">
         <h2>{{title}}</h2>
 
         <p>Created by {{user.name}} on {{format_date date_created}}</p>
     </div>
-    <div class="">
+    <div class="comment">
         <p>
             {{content}}
         </p>
     </div>
     {{#if logged_in}}
     <div>
-        <form class="comment-form">
+        <form class="comment-form comment-header">
             <label for="post-comment">Add a comment</label>
             <br>
             <input class="form-input" type="text" id="post-comment" />
+            <button id="commentBtn">Comment</button>
         </form>
     </div>
     {{else}}
-    <div>
+    <div class="card comment">
         <p>Log in to comment</p>
     </div>
     {{/if}}
     {{!-- {{#if comments}} --}}
     {{#each comments as |comment| }}
-    <div class="">
-        <div class="">
+    <div class="card">
+        <div class="card-header"></div>
+        <div class="comment">
             <h2>{{comment.content}}</h2>
             <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
         </div>

@@ -94,3 +94,31 @@ body {
   color: rgb(245, 245, 215);
   background-color: rgb(78, 75, 75);
 }
+
+.single-post {
+  display:flex;
+  justify-content: space-between;
+}
+
+.comment {
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+#post-comment {
+  padding-right: 375px;
+  padding-bottom: 50px;
+}
+
+.comment-form {
+  margin-left: 30px;
+  display:flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.comment-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+}
