@@ -46,9 +46,11 @@ allPosts.addEventListener("click", function (event) {
         editForm[i].style.display = "block";
         // editPost.style.display = "none";
         for (let i=0; i < personalPosts.length; i++) {
-        
-        if (Number(personalPosts[i].dataset.id) == `${post_id}`){
+        console.log('test 4')
+        console.log(personalPosts[i].dataset.id)
+        if (personalPosts[i].dataset.id == `${post_id}`){
           personalPosts[i].style.display = "none";
+          console.log('test 5')
         }
         }
     }}
