@@ -1,0 +1,33 @@
+{{#if posts.length}}
+  {{#each posts as |post|}}
+    <div class="">
+      <div class="">
+        <h2>
+          {{post.title}}
+        </h2>
+        <p>{{post.content}}</p>
+
+        <p>Created on {{format_date post.date_created}}</p>
+      </div>
+    </div>
+  {{/each}}
+{{/if}}
+<button class="" id="new-post">+ NEW POST</button>
+<div>
+  <form class="" id="newPostForm" style="display:none;">
+    <div class="card-header">
+      <label for="newPostTitle">Title:</label>
+      <input type="text" id="newPostTitle" name="newPostTitle" />
+    </div>
+
+    <div class="card-body">
+      <label for="newPostContent">Content:</label>
+      <input type="text" id="newPostContent" name="newPostContent" />
+    </div>
+    <div>
+      <button id="postBtn">Post</button>
+    </div>
+  </form>
+
+</div>
+<script src="./js/dashboard.js"></script>

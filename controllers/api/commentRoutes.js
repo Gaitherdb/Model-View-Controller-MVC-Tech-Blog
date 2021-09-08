@@ -3,7 +3,6 @@ const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-    console.log("req.body in croute")
     const post_id = JSON.parse(req.body.post_id);
     const content = req.body.content;
     try {
@@ -12,8 +11,6 @@ router.post('/', withAuth, async (req, res) => {
           post_id,
           user_id: req.session.user_id
         });
-        console.log("croute2")
-        console.log(newComment)
         res.status(200).json(newComment);
       }
     catch (err) {
