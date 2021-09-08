@@ -1,6 +1,6 @@
 
 const newPostBtn = document.querySelector('#new-post');
-const newPostForm = document.querySelector('#newPostForm');
+const newPostForm = document.querySelector('.postFormDiv');
 const submitNewPost = document.querySelector('#postBtn');
 
 
@@ -17,10 +17,10 @@ const postHandler = async (event) => {
     const content = document.querySelector('#newPostContent').value;
     
     // Collect values from the login form
-    console.log(content)
+
    
   
-    if (content) {
+    if (title && content) {
       
       // Send a POST request to the API endpoint
       const response = await fetch('/api/posts', {

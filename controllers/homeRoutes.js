@@ -12,6 +12,9 @@ router.get('/', async (req, res) => {
           attributes: ['name'],
         },
       ],
+      order: [
+        ['id', 'DESC'],
+      ],
     });
 
     // Serialize data so the template can read it

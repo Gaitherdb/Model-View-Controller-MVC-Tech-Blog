@@ -75,7 +75,7 @@ body {
 }
 
 .text-box {
-  padding:10px;
+  
 }
 
 .btn {
@@ -105,9 +105,9 @@ body {
   margin-left: 15px;
 }
 
-#post-comment {
-  padding-right: 375px;
-  padding-bottom: 50px;
+#newPostTitle {
+  width: 400px;
+  height: 50px;
 }
 
 .comment-form {
@@ -121,4 +121,29 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 15px;
+}
+
+.bold {
+  font-weight:bold;
+  font-size: 30px;
+}
+
+.flex {
+  display:flex;
+  flex-direction: column;
+}
+
+#new-post {
+  margin: 0 430px;
+}
+
+.form-input {
+  
+  height: 100px;
+  width: auto;
+}
+
+.form-account {
+  height: 40px;
+  width: auto;
 }
