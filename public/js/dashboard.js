@@ -1,9 +1,14 @@
-
+window.addEventListener('DOMContentLoaded', function(){
 const newPostBtn = document.querySelector('#new-post');
 const newPostForm = document.querySelector('.postFormDiv');
 const submitNewPost = document.querySelector('#postBtn');
+const editForm = document.querySelectorAll('.editPostForm');
+const personalPosts = document.querySelectorAll('.personalPosts');
+const postsBtn = document.querySelectorAll('.posts');
+const allPosts = document.querySelector('.allPosts');
 
 
+console.log(editPost)
 
 newPostBtn.addEventListener("click", function (event) {
    if (newPostForm.style.display === "none") {
@@ -11,6 +16,47 @@ newPostBtn.addEventListener("click", function (event) {
        newPostBtn.style.display = "none";
    }
 })
+
+ 
+
+allPosts.addEventListener("click", function (event) {
+ 
+  var element = event.target;
+  if (element.matches('button')) {
+  var post_id = element.parentElement.id;
+  console.log(post_id)
+
+
+  // const personalPosts = document.getElementById(`id${post_id}`);
+  
+  console.log(personalPosts)
+ 
+  console.log(postsBtn)
+  console.log('editform')
+  console.log(editForm)
+    console.log(typeof editForm[1].dataset.id)
+    for (let i=0; i < editForm.length; i++) {
+      console.log('test 1')
+      if (Number(editForm[i].dataset.id) == `${post_id}`){
+        console.log('test 2')
+      // var optionIndex = Number(element.getAttribute("dataset"));
+      if (editForm[i].style.display === "none") {
+        
+        console.log('test 3')
+        editForm[i].style.display = "block";
+        // editPost.style.display = "none";
+        for (let i=0; i < personalPosts.length; i++) {
+        
+        if (Number(personalPosts[i].dataset.id) == `${post_id}`){
+          personalPosts[i].style.display = "none";
+        }
+        }
+    }}
+    }}
+})
+
+
+
 const postHandler = async (event) => {
     event.preventDefault();
     const title = document.querySelector('#newPostTitle').value;
@@ -38,7 +84,8 @@ const postHandler = async (event) => {
       }
     }
   };
-  
+
   document
     .querySelector('#newPostForm')
     .addEventListener('submit', postHandler);
+})

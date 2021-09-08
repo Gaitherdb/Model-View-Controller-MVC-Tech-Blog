@@ -74,10 +74,6 @@ body {
   margin-left: 20px;
 }
 
-.text-box {
-  
-}
-
 .btn {
   font-size: 20px;
   background-color: rgb(78, 75, 75);
@@ -146,4 +142,8 @@ body {
 .form-account {
   height: 40px;
   width: auto;
+}
+
+.displayNone {
+  display:none;
 }

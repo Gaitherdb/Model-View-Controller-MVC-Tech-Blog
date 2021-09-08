@@ -1,36 +1,63 @@
 <div class="flex">
-{{#if posts.length}}
-  {{#each posts as |post|}}
-    <div class="card">
+  <button class="" id="new-post">+ NEW POST</button>
+  <div class="card postFormDiv" style="display: none;">
+    <form class="flex" id="newPostForm">
       <div class="card-header">
-        <h2>
-          {{post.title}}
-        </h2>
+        <label for="newPostTitle">Title:</label>
+        <input type="text" id="newPostTitle" name="newPostTitle" />
       </div>
-      <p>{{post.content}}</p>
 
-      <p>Created on {{format_date post.date_created}}</p>
+      <div class="card-body flex">
+        <label for="newPostContent">Content:</label>
+        <textarea type="text" id="newPostContent" class="form-input" name="newPostContent" cols="50"
+          rows="10"></textarea>
+      </div>
 
-    </div>
-  {{/each}}
-{{/if}}
-<button class="" id="new-post">+ NEW POST</button>
-</div>
-<div class="card postFormDiv" style="display:none;">
-  <form class="flex" id="newPostForm" >
-    <div class="card-header">
-      <label for="newPostTitle">Title:</label>
-      <input type="text" id="newPostTitle" name="newPostTitle" />
-    </div>
-
-    <div class="card-body flex">
-      <label for="newPostContent">Content:</label>
-      <textarea type="text" id="newPostContent" class="form-input" name="newPostContent" cols="50" rows="10"></textarea>
-    </div>
-    
       <button id="postBtn">Post</button>
-    
-  </form>
 
+    </form>
+
+  </div>
+
+
+<div class="allPosts">
+  {{#if posts.length}}
+  {{#each posts as |post|}}
+  <div class="card personalPosts" id="{{post.id}}" dataset="{{post.id}}">
+    <div class="card-header">
+      <h2>
+        {{post.title}}
+      </h2>
+    </div>
+    <p>{{post.content}}</p>
+
+    <p>Created on {{format_date post.date_created}}</p>
+
+    <button class="posts" dataset="{{post.id}}">Edit</button>
+
+  </div>
+
+  <div class="flex editPostForm" data-id="{{post.id}}" style="display: none;">
+    
+    <div class="card ">
+      <button class="" id="delete-post">DELETE</button>
+      <form class="flex" id="editPost">
+        <div class="card-header">
+          <label for="editTitle">Title:</label>
+          <input type="text" id="editTitle" name="editTitle" value={{post.title}} />
+        </div>
+
+        <div class="card-body flex">
+          <label for="editContent">Content:</label>
+          <textarea type="text" id="editContent" class="form-input" name="editContent" cols="50" rows="10">{{post.content}}</textarea>
+        </div>
+        <button id="postBtn">Edit</button>
+      </form>
+    </div>
+  </div>
+  {{/each}}
+  {{/if}}
 </div>
-<script src="./js/dashboard.js"></script>
+
+
+  <script src="./js/dashboard.js"></script>
