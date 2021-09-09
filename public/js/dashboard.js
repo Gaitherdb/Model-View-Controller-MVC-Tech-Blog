@@ -24,7 +24,7 @@ allPosts.addEventListener("click", function (event) {
   if (element.matches('.posts')) {
   var post_id = element.parentElement.id;
  
-    console.log(typeof editForm[1].dataset.id)
+    
     for (let i=0; i < editForm.length; i++) {
      
       if (Number(editForm[i].dataset.id) == `${post_id}`){
