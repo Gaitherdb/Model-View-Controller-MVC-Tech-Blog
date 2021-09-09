@@ -57,9 +57,7 @@ router.get('/posts/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
     const comments = commentData.map((submission) => submission.get({ plain: true }));
-    console.log("home route")
-    console.log(comments);
-    console.log(post);
+    
     res.render('post', {
       comments,
       ...post,

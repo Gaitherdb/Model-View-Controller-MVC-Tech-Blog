@@ -61,14 +61,32 @@ const deletePost = async (event) => {
 }
 }
 
+const editPost = async (event) => {
+  var element = event.target;
+  let post_id = element.dataset.id;
+  const title = document.querySelector('#editTitle').value;
+  const content = document.querySelector('#editContent').value;
+  
+  // const date_created = new Date();
+  if (element.matches('#editBtn')){
+  const response = await fetch(`/api/posts/${post_id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title, content }),
+      headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+      document.location.reload();
+  } else {
+      alert(response.statusText);
+  }
+}
+}
+
 const postHandler = async (event) => {
     event.preventDefault();
     const title = document.querySelector('#newPostTitle').value;
     const content = document.querySelector('#newPostContent').value;
-    
-    // Collect values from the login form
-
-   
   
     if (title && content) {
       
@@ -95,4 +113,7 @@ const postHandler = async (event) => {
     document
     .querySelector('.allPosts')
     .addEventListener('click', deletePost);
+    document
+    .querySelector('.allPosts')
+    .addEventListener('click', editPost);
 })

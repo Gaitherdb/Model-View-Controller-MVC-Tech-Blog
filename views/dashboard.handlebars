@@ -40,7 +40,7 @@
   <div class="flex editPostForm" data-id="{{post.id}}" style="display: none;">
     
     <div class="card ">
-      <button class="" data-id="{{post.id}}" id="delete-post">DELETE</button>
+      <button  data-id="{{post.id}}" id="delete-post">DELETE</button>
       <form class="flex" id="editPost">
         <div class="card-header">
           <label for="editTitle">Title:</label>
@@ -51,7 +51,7 @@
           <label for="editContent">Content:</label>
           <textarea type="text" id="editContent" class="form-input" name="editContent" cols="50" rows="10">{{post.content}}</textarea>
         </div>
-        <button id="postBtn">Edit</button>
+        <button id="editBtn" data-id="{{post.id}}">Edit</button>
       </form>
     </div>
   </div>

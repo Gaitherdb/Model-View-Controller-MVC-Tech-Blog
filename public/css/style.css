@@ -147,3 +147,7 @@ body {
 .displayNone {
   display:none;
 }
+
+#delete-post{
+  background-color: red;
+}
