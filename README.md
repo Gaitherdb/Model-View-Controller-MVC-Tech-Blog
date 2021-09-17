@@ -28,7 +28,7 @@
   ## Usage
   Access the webpage by going to the deployed site: [Tech Blog](). 
 
-  If you want like to run this on a local server, set the path to the Model-View-Controller-MVC-Tech-Blog folder in the terminal and log in to MySQL and source the schema.sql by running `source db/schema.sql`. Run `Node seeds/seed.js` to source the seeds folder, if you want preset data.  Then run the server.js file by typing `node server.js`. Go to http://localhost:3001 to acesss the site.
+  If you want to run this on a local server, set the path to the Model-View-Controller-MVC-Tech-Blog folder in the terminal and log in to MySQL and source the schema.sql by running `source db/schema.sql`. Run `Node seeds/seed.js` to source the seeds folder, if you want preset data.  Then run the server.js file by typing `node server.js`. Go to http://localhost:3001 to acesss the site.
 
   ![](images/techblog1.png)
   ![](images/techblogsignup.png)
